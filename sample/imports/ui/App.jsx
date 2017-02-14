@@ -8,6 +8,9 @@ import { Tasks } from '../api/tasks.js';
 
 import Task from './Task.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
+import { Button } from 'semantic-ui-react'
+
+import '../stylesheets/style.css'
  
 // App component - represents the whole app
 class App extends Component {
@@ -61,6 +64,23 @@ class App extends Component {
       <div className="container">
         <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
+
+          <div>
+            <Button
+              color='red'
+              content='Like'
+              icon='heart'
+              label={{ basic: true, color: 'red', pointing: 'left', content: '2,048' }}
+            />
+
+            <Button
+              basic
+              color='blue'
+              content='Fork'
+              icon='fork'
+              label={{ as: 'a', basic: true, color: 'blue', pointing: 'left', content: '1,048' }}
+            />
+          </div>
 
           <label className="hide-completed">
             <input

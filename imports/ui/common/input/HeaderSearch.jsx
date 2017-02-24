@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Menu, Search } from 'semantic-ui-react';
+import { Menu, Search, Label } from 'semantic-ui-react';
 
 import { Seiyuu } from '/imports/api/seiyuu.js';
 
@@ -12,7 +12,6 @@ export class HeaderSearch extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { isLoading: false };
-		console.log(props)
 	}
 
 	componentWillMount() {
@@ -24,15 +23,14 @@ export class HeaderSearch extends Component {
 	}
 
 	handleResultSelect(e, result) {
-		console.log(result);
+		//console.log(result);
 	}
 
 	handleSearchChange(e, value) {
 		this.setState({ isLoading: true, value });
-		console.log(value);
 		setTimeout(() => {
 	    	if (!_.isEmpty(this.state.value)) {
-				this.setState({ isLoading: false });
+				Meteor.call('seiyuu.search', this.state.value, this.setResults.bind(this));
 			}
 			else {
 				this.resetComponent();
@@ -40,9 +38,15 @@ export class HeaderSearch extends Component {
 	    }, 1000);
 	}
 
+	setResults(error, dbResults) {
+		this.setState({ 
+			isLoading: false, 
+			results: dbResults,
+		});
+	}
+
 	render() {
 		const { isLoading, results, value } = this.state;
-
 		return (
 			<Menu.Item>
 	    		<Search
@@ -67,6 +71,6 @@ export default createContainer(() => {
 	Meteor.subscribe('seiyuu');
 
 	return {
-		seiyuu: Seiyuu.find().fetch(),
+		seiyuu: Seiyuu.find({}).fetch(),
 	}
 }, HeaderSearch);

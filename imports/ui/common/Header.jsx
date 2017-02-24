@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
 import React, { Component } from 'react';
 import { Menu, Image } from 'semantic-ui-react';
-import HeaderSearch from './input/header-search.jsx';
+import HeaderSearch from './input/HeaderSearch.jsx';
 
 export default class Header extends Component {
 

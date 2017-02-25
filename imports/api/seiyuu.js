@@ -38,7 +38,9 @@ Meteor.methods({
 			return {
 				childKey : value._id.toString(),
 				title : value.jp_last + value.jp_given,
-				description : value.en_given + " " + value.en_last
+				description : value.en_given + " " + value.en_last,
+				//Replace image field with actual url from the database
+				image: "http://www.81produce.co.jp/images/actor/lady/0105716175220.jpg"
 			};
 		});
 	}

@@ -5,8 +5,8 @@ export default class Hex extends Component {
 		return (
 			<li className="hex">
         		<div className="hexIn">
-          			<a className="hexLink" href="{this.props.link}">
-            			<img src="{this.props.image}" alt="" />
+          			<a className="hexLink" href={this.props.link}>
+            			<img src={this.props.image} alt="" />
             			<h1>{this.props.title}</h1>
             			<p>{this.props.description}</p>
           			</a>

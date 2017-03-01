@@ -5,12 +5,14 @@ import { Meteor } from 'meteor/meteor';
 
 import Header from '../common/Header.jsx';
 import Footer from '../common/Footer.jsx';
+import HomeMain from './HomeMain.jsx';
 
 export default class Home extends Component {
 	render() {
 		return (
 			<div>
 				<Header/>
+				<HomeMain/>
 				<Footer/>
 			</div>
 		);

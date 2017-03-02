@@ -50,6 +50,7 @@ export class HeaderSearch extends Component {
 		return (
 			<Menu.Item>
 	    		<Search
+	    			id="homeSearch"
 	    			loading={isLoading}
 	    			placeholder='Search...'
 	    			onResultSelect={this.handleResultSelect.bind(this)}

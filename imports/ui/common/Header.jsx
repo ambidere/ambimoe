@@ -19,26 +19,28 @@ export default class Header extends Component {
 		const { activeItem, searchState } = this.state;
 
 		return (
-	      <Menu inverted>
-	        <Menu.Item>
-	        	<Image className='ui' src='logo.png'/>
-	        </Menu.Item>
-	        <Menu.Item 
-	        	name='about'
-	        	link
-	        	active={activeItem === 'about'}
-	        	onClick={this.handleItemClick.bind(this)}
-	        />
-	        <Menu.Item 
-	        	name='blog'
-	        	link
-	        	active={activeItem === 'blog'}
-	        	onClick={this.handleItemClick.bind(this)}
-	        />
-	        <Menu.Menu position='right'>
-		        <HeaderSearch />
-		    </Menu.Menu>
-	      </Menu>
+		  <header>
+		  	<Menu inverted>
+		        <Menu.Item>
+		        	<Image className='ui' src='logo.png'/>
+		        </Menu.Item>
+		        <Menu.Item 
+		        	name='about'
+		        	link
+		        	active={activeItem === 'about'}
+		        	onClick={this.handleItemClick.bind(this)}
+		        />
+		        <Menu.Item 
+		        	name='blog'
+		        	link
+		        	active={activeItem === 'blog'}
+		        	onClick={this.handleItemClick.bind(this)}
+		        />
+		        <Menu.Menu position='right'>
+			        <HeaderSearch />
+			    </Menu.Menu>
+		      </Menu>
+		  </header>
 	    )
 	}
 }

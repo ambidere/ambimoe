@@ -7,13 +7,22 @@ import HexGrid from '../common/hex/HexGrid.jsx'
 export default class HomeMain extends Component {
 	render() {
 		return (
-			<main>
+			<main className="homeMain">
 				<HexGrid>
 					<Hex 
-						title={"test"} 
-						description={"test description"}
-						link={"/seiyuu/yoshino_aoyama"}
-						image={"/seiyuu/female/yoshino_aoyama.jpg"}
+						title={"BIRTHDAY"} 
+						link={"/birthday"}
+						image={"/images/home/birthday.jpg"}
+					/>
+					<Hex 
+						title={"MATCHER"} 
+						link={"/matcher"}
+						image={"/images/home/matcher.jpg"}
+					/>
+					<Hex 
+						title={"LISTS"} 
+						link={"/lists"}
+						image={"/images/home/lists.jpg"}
 					/>
 				</HexGrid>
 			</main>

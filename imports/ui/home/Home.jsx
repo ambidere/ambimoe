@@ -10,7 +10,7 @@ import HomeMain from './HomeMain.jsx';
 export default class Home extends Component {
 	render() {
 		return (
-			<div>
+			<div id="appContainer">
 				<Header/>
 				<HomeMain/>
 				<Footer/>

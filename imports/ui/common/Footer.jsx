@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
-import { Container, Grid, Segment, Divider, Header } from 'semantic-ui-react';
-
+import { Grid, Segment } from 'semantic-ui-react';
+import SocialIcon from './icon/SocialIcon.jsx'
 
 export default class Footer extends Component {
 	render() {
 		return (
 			<footer>
 				<Grid>
-					<Grid.Column width={14}>
+					<Grid.Column width={12}>
 					</Grid.Column>
-					<Grid.Column floated='right' width={2}>
+					<Grid.Column floated='right' width={4}>
 						<Segment basic>
-							<a className="socialIcons" href="https://github.com/ambidere" target="_blank">
-								<FontAwesome name='github' size='2x'/>
-							</a>
-							<a className="socialIcons" href="https://twitter.com/ambidere" target="_blank">
-								<FontAwesome name='twitter' size='2x'/>
-							</a>
+							<SocialIcon 
+								name={'github'}
+								link={'https://github.com/ambidere'}
+								size={'2x'}
+							/>
+							<SocialIcon 
+								name={'twitter'}
+								link={'https://twitter.com/ambidere'}
+								size={'2x'}
+							/>
 						</Segment>
 					</Grid.Column>
 				</Grid>

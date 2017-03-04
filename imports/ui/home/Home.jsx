@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
 
-import { Meteor } from 'meteor/meteor';
-
-import Header from '../common/Header.jsx';
-import Footer from '../common/Footer.jsx';
-import HomeMain from './HomeMain.jsx';
+import Hex from '../common/hex/Hex.jsx'
+import HexGrid from '../common/hex/HexGrid.jsx'
 
 export default class Home extends Component {
 	render() {
 		return (
-			<div id="appContainer">
-				<Header/>
-				<HomeMain/>
-				<Footer/>
-			</div>
+			<main className="homeMain">
+				<HexGrid>
+					<Hex 
+						title={"BIRTHDAY"} 
+						link={"/birthday"}
+						image={"/images/home/birthday.jpg"}
+					/>
+					<Hex 
+						title={"MATCHER"} 
+						link={"/matcher"}
+						image={"/images/home/matcher.jpg"}
+					/>
+					<Hex 
+						title={"LISTS"} 
+						link={"/lists"}
+						image={"/images/home/lists.jpg"}
+					/>
+				</HexGrid>
+			</main>
 		);
 	}
 }

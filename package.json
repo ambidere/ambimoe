@@ -20,6 +20,13 @@
   "devDependencies": {
     "autoprefixer": "^6.3.1"
   },
+  "cssModules": {
+    "globalVariables": [],
+    "ignorePaths": [
+      "node_modules/convert-source-map/test",
+      "node_modules/rebound/examples"
+    ] 
+  },
   "postcss": {
     "plugins": {
       "autoprefixer": {
